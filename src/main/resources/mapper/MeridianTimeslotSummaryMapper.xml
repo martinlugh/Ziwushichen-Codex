@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.meridian.mapper.MeridianTimeslotSummaryMapper">
+<insert id="upsertSummary">INSERT INTO meridian_timeslot_summary (id,user_id,summary_date,meridian_slot_code,avg_overall_score,dominant_color_status,sample_count,created_at)
+VALUES (CAST((UNIX_TIMESTAMP(NOW(3)) * 1000000 + FLOOR(RAND() * 1000000)) AS UNSIGNED),#{userId},#{summaryDate},#{meridianSlotCode},#{avgOverallScore},#{dominantColorStatus},#{sampleCount},NOW())
+ON DUPLICATE KEY UPDATE avg_overall_score=VALUES(avg_overall_score),dominant_color_status=VALUES(dominant_color_status),sample_count=VALUES(sample_count)</insert>
+<select id="selectTimeslotSummary" resultType="com.example.meridian.domain.vo.TimeslotSummaryVo">SELECT user_id userId,summary_date summaryDate,meridian_slot_code meridianSlotCode,avg_overall_score avgOverallScore,dominant_color_status dominantColorStatus,sample_count sampleCount FROM meridian_timeslot_summary WHERE user_id=#{userId} AND summary_date=#{summaryDate} AND (#{meridianSlotCode} IS NULL OR meridian_slot_code=#{meridianSlotCode}) ORDER BY meridian_slot_code</select>
+<select id="selectDailySummary" resultType="com.example.meridian.domain.vo.DailySummaryVo">
+SELECT a.user_id userId,
+       a.summary_date summaryDate,
+       ROUND(AVG(a.avg_overall_score),2) dailyAvgOverallScore,
+       SUM(a.sample_count) totalSampleCount,
+       (
+           SELECT b.dominant_color_status
+           FROM meridian_timeslot_summary b
+           WHERE b.user_id = a.user_id
+             AND b.summary_date = a.summary_date
+           GROUP BY b.dominant_color_status
+           ORDER BY COUNT(1) DESC, b.dominant_color_status ASC
+           LIMIT 1
+       ) dominantColorStatus
+FROM meridian_timeslot_summary a
+WHERE a.user_id=#{userId}
+  AND a.summary_date=#{summaryDate}
+GROUP BY a.user_id, a.summary_date
+</select>
+</mapper>
