@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.meridian.mapper.MeridianRealtimeResultMapper">
+<select id="selectLatestByUser" resultType="com.example.meridian.domain.entity.MeridianRealtimeResult">SELECT * FROM meridian_realtime_result WHERE user_id=#{userId} ORDER BY measure_time DESC LIMIT 1</select>
+<select id="selectByUserSlotAndTimeRange" resultType="com.example.meridian.domain.entity.MeridianRealtimeResult">SELECT * FROM meridian_realtime_result WHERE user_id=#{userId} AND meridian_slot_code=#{meridianSlotCode} AND measure_time <![CDATA[ >= ]]> #{startTime} AND measure_time <![CDATA[ <= ]]> #{endTime} ORDER BY measure_time</select>
+<select id="countRecentRed" resultType="java.lang.Integer">SELECT COUNT(1) FROM meridian_realtime_result WHERE user_id=#{userId} AND measure_time <![CDATA[ >= ]]> DATE_SUB(NOW(), INTERVAL #{minutes} MINUTE) AND health_color_status='IMBALANCE_ALERT'</select>
+</mapper>

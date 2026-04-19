@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.meridian.mapper.MeridianModelProgressMapper">
+<insert id="upsertProgress">INSERT INTO meridian_model_progress (id,user_id,completed_slots,total_slots,progress_percent,progress_note,updated_at)
+VALUES (CAST((UNIX_TIMESTAMP(NOW(3)) * 1000000 + FLOOR(RAND() * 1000000)) AS UNSIGNED),#{userId},#{completedSlots},#{totalSlots},#{progressPercent},#{progressNote},NOW())
+ON DUPLICATE KEY UPDATE completed_slots=VALUES(completed_slots),total_slots=VALUES(total_slots),progress_percent=VALUES(progress_percent),progress_note=VALUES(progress_note),updated_at=NOW()</insert>
+<select id="selectByUserId" resultType="com.example.meridian.domain.entity.MeridianModelProgress">SELECT * FROM meridian_model_progress WHERE user_id=#{userId} LIMIT 1</select>
+</mapper>

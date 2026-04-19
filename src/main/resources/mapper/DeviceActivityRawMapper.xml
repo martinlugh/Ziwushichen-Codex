@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.meridian.mapper.DeviceActivityRawMapper">
+<select id="selectByUserSlotAndTimeRange" resultType="com.example.meridian.domain.entity.DeviceActivityRaw">SELECT * FROM device_activity_raw WHERE user_id=#{userId} AND meridian_slot_code=#{meridianSlotCode} AND measure_time <![CDATA[ >= ]]> #{startTime} AND measure_time <![CDATA[ <= ]]> #{endTime} ORDER BY measure_time</select>
+<select id="selectRecent3DaysSameSlot" resultType="com.example.meridian.domain.entity.DeviceActivityRaw">SELECT * FROM device_activity_raw WHERE user_id=#{userId} AND meridian_slot_code=#{meridianSlotCode} AND measure_time <![CDATA[ >= ]]> #{startTime} AND measure_time <![CDATA[ <= ]]> #{endTime} ORDER BY measure_time</select>
+<select id="selectLatestByUser" resultType="com.example.meridian.domain.entity.DeviceActivityRaw">SELECT * FROM device_activity_raw WHERE user_id=#{userId} ORDER BY measure_time DESC LIMIT 1</select>
+</mapper>

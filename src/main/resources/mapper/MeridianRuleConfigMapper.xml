@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.meridian.mapper.MeridianRuleConfigMapper">
+<select id="selectEnabledRules" resultType="com.example.meridian.domain.entity.MeridianRuleConfig">SELECT * FROM meridian_rule_config WHERE enabled=1 ORDER BY updated_at DESC</select>
+<select id="selectEnabledRuleByCode" resultType="com.example.meridian.domain.entity.MeridianRuleConfig">SELECT * FROM meridian_rule_config WHERE enabled=1 AND rule_code=#{ruleCode} LIMIT 1</select>
+</mapper>
