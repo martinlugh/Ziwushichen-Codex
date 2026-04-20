@@ -1,0 +1,134 @@
+[
+  {
+    "meridianTimeSlotName": "ZI",
+    "meridianName": "胆经",
+    "focusDimension": "夜间恢复",
+    "scoreWeight": {"loadScore": 0.10, "recoveryHealthScore": 0.30, "oxygenScore": 0.10, "rhythmMatchScore": 0.20, "baselineDeviationScore": 0.20, "confidenceScore": 0.10},
+    "thresholdConfig": {"spo2Low": 93, "stressHigh": 75, "recoveryLow": 45, "heartRateHigh": 100},
+    "tagRule": ["夜间恢复优先", "控制交感兴奋"],
+    "medicalTemplate": "当前处于{meridianName}主导时段，重点观察恢复指标与压力负荷。",
+    "tcmTemplate": "{meridianName}当令，宜重视入静与阴阳转换。",
+    "adviceTemplate": "建议降低刺激输入，保持安静环境，配合缓慢呼吸放松。"
+  },
+  {
+    "meridianTimeSlotName": "CHOU",
+    "meridianName": "肝经",
+    "focusDimension": "夜间修复",
+    "scoreWeight": {"loadScore": 0.10, "recoveryHealthScore": 0.30, "oxygenScore": 0.10, "rhythmMatchScore": 0.20, "baselineDeviationScore": 0.20, "confidenceScore": 0.10},
+    "thresholdConfig": {"spo2Low": 93, "stressHigh": 75, "recoveryLow": 45, "heartRateHigh": 100},
+    "tagRule": ["肝血调节", "夜间修复"],
+    "medicalTemplate": "当前时段更关注自主神经平衡与恢复连续性。",
+    "tcmTemplate": "{meridianName}值时，宜藏血养神，避免情绪波动。",
+    "adviceTemplate": "建议避免熬夜和进食刺激性食物，保持平稳休息。"
+  },
+  {
+    "meridianTimeSlotName": "YIN",
+    "meridianName": "肺经",
+    "focusDimension": "呼吸节律",
+    "scoreWeight": {"loadScore": 0.10, "recoveryHealthScore": 0.25, "oxygenScore": 0.20, "rhythmMatchScore": 0.20, "baselineDeviationScore": 0.15, "confidenceScore": 0.10},
+    "thresholdConfig": {"spo2Low": 94, "stressHigh": 72, "recoveryLow": 45, "heartRateHigh": 98},
+    "tagRule": ["呼吸节律", "氧合稳定"],
+    "medicalTemplate": "当前阶段应重点关注氧合与呼吸节律稳定性。",
+    "tcmTemplate": "{meridianName}主气，宜调息敛神。",
+    "adviceTemplate": "建议保持空气流通，进行温和腹式呼吸训练。"
+  },
+  {
+    "meridianTimeSlotName": "MAO",
+    "meridianName": "大肠经",
+    "focusDimension": "晨起节律",
+    "scoreWeight": {"loadScore": 0.15, "recoveryHealthScore": 0.20, "oxygenScore": 0.15, "rhythmMatchScore": 0.20, "baselineDeviationScore": 0.20, "confidenceScore": 0.10},
+    "thresholdConfig": {"spo2Low": 94, "stressHigh": 75, "recoveryLow": 40, "heartRateHigh": 105},
+    "tagRule": ["晨起过渡", "节律唤醒"],
+    "medicalTemplate": "晨起时段建议评估从休息到活动的平稳过渡情况。",
+    "tcmTemplate": "{meridianName}当令，宜顺畅排浊，调畅气机。",
+    "adviceTemplate": "建议起床后补充温水并进行轻量拉伸。"
+  },
+  {
+    "meridianTimeSlotName": "CHEN",
+    "meridianName": "胃经",
+    "focusDimension": "日间代谢",
+    "scoreWeight": {"loadScore": 0.20, "recoveryHealthScore": 0.15, "oxygenScore": 0.10, "rhythmMatchScore": 0.20, "baselineDeviationScore": 0.25, "confidenceScore": 0.10},
+    "thresholdConfig": {"spo2Low": 94, "stressHigh": 78, "recoveryLow": 35, "heartRateHigh": 108},
+    "tagRule": ["代谢负荷", "节律匹配"],
+    "medicalTemplate": "当前时段负荷逐步上升，需关注循环与代谢适应性。",
+    "tcmTemplate": "{meridianName}旺，宜和胃降逆，饮食有节。",
+    "adviceTemplate": "建议保持规律进食与适度步行，避免久坐。"
+  },
+  {
+    "meridianTimeSlotName": "SI",
+    "meridianName": "脾经",
+    "focusDimension": "运化与耐受",
+    "scoreWeight": {"loadScore": 0.20, "recoveryHealthScore": 0.15, "oxygenScore": 0.10, "rhythmMatchScore": 0.20, "baselineDeviationScore": 0.25, "confidenceScore": 0.10},
+    "thresholdConfig": {"spo2Low": 94, "stressHigh": 78, "recoveryLow": 35, "heartRateHigh": 110},
+    "tagRule": ["运化耐受", "活动匹配"],
+    "medicalTemplate": "上午时段建议评估活动负荷与恢复能力是否匹配。",
+    "tcmTemplate": "{meridianName}主运化，宜稳中求进。",
+    "adviceTemplate": "建议工作间隙短时活动，保持节律性补水。"
+  },
+  {
+    "meridianTimeSlotName": "WU",
+    "meridianName": "心经",
+    "focusDimension": "循环负荷",
+    "scoreWeight": {"loadScore": 0.30, "recoveryHealthScore": 0.15, "oxygenScore": 0.10, "rhythmMatchScore": 0.20, "baselineDeviationScore": 0.15, "confidenceScore": 0.10},
+    "thresholdConfig": {"spo2Low": 94, "stressHigh": 80, "recoveryLow": 35, "heartRateHigh": 112},
+    "tagRule": ["循环负荷", "午时稳定"],
+    "medicalTemplate": "午时循环负荷敏感，建议重点监测心率和压力评分。",
+    "tcmTemplate": "{meridianName}当令，宜宁心安神，防躁动。",
+    "adviceTemplate": "建议午间减少高强度活动，安排短暂放松。"
+  },
+  {
+    "meridianTimeSlotName": "WEI",
+    "meridianName": "小肠经",
+    "focusDimension": "负荷回落",
+    "scoreWeight": {"loadScore": 0.22, "recoveryHealthScore": 0.18, "oxygenScore": 0.10, "rhythmMatchScore": 0.20, "baselineDeviationScore": 0.20, "confidenceScore": 0.10},
+    "thresholdConfig": {"spo2Low": 94, "stressHigh": 78, "recoveryLow": 35, "heartRateHigh": 110},
+    "tagRule": ["午后回落", "耐受监测"],
+    "medicalTemplate": "午后应观察负荷是否顺利回落，避免持续高压。",
+    "tcmTemplate": "{meridianName}值时，宜调和升降，防劳倦过度。",
+    "adviceTemplate": "建议午后进行轻量活动并分段休息。"
+  },
+  {
+    "meridianTimeSlotName": "SHEN",
+    "meridianName": "膀胱经",
+    "focusDimension": "日间节律",
+    "scoreWeight": {"loadScore": 0.20, "recoveryHealthScore": 0.18, "oxygenScore": 0.10, "rhythmMatchScore": 0.22, "baselineDeviationScore": 0.20, "confidenceScore": 0.10},
+    "thresholdConfig": {"spo2Low": 94, "stressHigh": 78, "recoveryLow": 35, "heartRateHigh": 108},
+    "tagRule": ["节律稳定", "防疲劳累积"],
+    "medicalTemplate": "下午后段需关注疲劳累积与节律偏移风险。",
+    "tcmTemplate": "{meridianName}运行，宜舒展筋脉，通达气机。",
+    "adviceTemplate": "建议在久坐后补充步行与拉伸。"
+  },
+  {
+    "meridianTimeSlotName": "YOU",
+    "meridianName": "肾经",
+    "focusDimension": "由动转静",
+    "scoreWeight": {"loadScore": 0.18, "recoveryHealthScore": 0.22, "oxygenScore": 0.10, "rhythmMatchScore": 0.20, "baselineDeviationScore": 0.20, "confidenceScore": 0.10},
+    "thresholdConfig": {"spo2Low": 94, "stressHigh": 76, "recoveryLow": 40, "heartRateHigh": 105},
+    "tagRule": ["入夜过渡", "恢复准备"],
+    "medicalTemplate": "傍晚阶段建议关注由活动向恢复状态的平稳转换。",
+    "tcmTemplate": "{meridianName}渐旺，宜收敛心神，培补正气。",
+    "adviceTemplate": "建议减少刺激性活动，保持规律晚餐与散步。"
+  },
+  {
+    "meridianTimeSlotName": "XU",
+    "meridianName": "心包经",
+    "focusDimension": "回落入静",
+    "scoreWeight": {"loadScore": 0.15, "recoveryHealthScore": 0.25, "oxygenScore": 0.10, "rhythmMatchScore": 0.20, "baselineDeviationScore": 0.20, "confidenceScore": 0.10},
+    "thresholdConfig": {"spo2Low": 93, "stressHigh": 74, "recoveryLow": 45, "heartRateHigh": 100},
+    "tagRule": ["压力回落", "睡前准备"],
+    "medicalTemplate": "夜间前段应重点观察压力回落与恢复启动情况。",
+    "tcmTemplate": "{meridianName}主护心，宜安神定志。",
+    "adviceTemplate": "建议降低屏幕暴露和高噪声刺激，进行放松活动。"
+  },
+  {
+    "meridianTimeSlotName": "HAI",
+    "meridianName": "三焦经",
+    "focusDimension": "深度恢复",
+    "scoreWeight": {"loadScore": 0.10, "recoveryHealthScore": 0.30, "oxygenScore": 0.10, "rhythmMatchScore": 0.20, "baselineDeviationScore": 0.20, "confidenceScore": 0.10},
+    "thresholdConfig": {"spo2Low": 93, "stressHigh": 72, "recoveryLow": 50, "heartRateHigh": 98},
+    "tagRule": ["深度恢复", "入静维持"],
+    "medicalTemplate": "此时段恢复收益高，建议确保恢复指标持续向好。",
+    "tcmTemplate": "{meridianName}通行水道，宜养阴潜阳。",
+    "adviceTemplate": "建议尽快进入睡眠准备，保持环境安静和光线柔和。"
+  }
+]
