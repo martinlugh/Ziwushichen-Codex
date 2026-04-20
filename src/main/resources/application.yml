@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: ziwushichen-health-system
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+app:
+  demo:
+    enabled: true
